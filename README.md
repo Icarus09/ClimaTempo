@@ -47,7 +47,7 @@ OBS!!!: NÃO POPULAR O BANCO ANTES DE SEGUIR ESSAS ETAPAS.
 
 ## Resultados
 #
-![Preview](imagem/clima_tempo.png)
+![Preview](imagem/clima_tempo.PNG)
 
 
 ---
