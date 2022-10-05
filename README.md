@@ -1,10 +1,10 @@
 # ClimaTempo
 <br>
 
-## Desafio
+## Proposta
 #
 
-Desenvolver um app de previsões do tempo de cidades.
+Um Aplicativo web para apresentar as previsões do tempo de cidades, mostrando as 3 cidades mais quentes e mais frias de um determinado dia. Mostrar as previsões dos 7 proximos dias da cidade selecionada.  
 <br>
 ## Tecnologias
 #
