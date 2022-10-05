@@ -1,0 +1,109 @@
+﻿@model CidadeClima.Models.PrevisaoClimaVM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e89ba48f82.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>teste</title>
+</head>
+<body>
+    <div class="title-main">
+        <p class="clima">Clima tempo simples</p>
+    </div>
+    <div class="container_clima">
+        <section class="sec1">
+            <div class="title">Cidades mais quentes hoje</div>
+            <div class="conteudos">
+                <div class="cidades">
+                    <p class="a">@Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[0].Cidade)/@Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[0].EstadoUF)</p>
+                    <p class="a">@Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[1].Cidade)/@Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[1].EstadoUF)</p>
+                    <p class="a">@Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[2].Cidade)/@Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[2].EstadoUF)</p>
+                </div>
+                <div class="min-1">
+                    <p class="b">Min @Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[0].TemperaturaMinima)C</p>
+                    <p class="b">Min @Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[1].TemperaturaMinima)C</p>
+                    <p class="b">Min @Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[2].TemperaturaMinima)C</p>
+                </div>
+                <div class="max">
+                    <p class="c">Max @Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[0].TemperaturaMaxima)C</p>
+                    <p class="c">Max @Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[1].TemperaturaMaxima)C</p>
+                    <p class="c">Max @Html.DisplayFor(modelItem => Model.CidadesMaisQuentes[2].TemperaturaMaxima)C</p>
+                </div>
+            </div>
+        </section>
+        <section class="sec2">
+            <div class="title">Cidades mais frias hoje</div>
+            <div class="conteudos">
+                <div class="cidades">
+                    <p class="a">@Html.DisplayFor(modelItem => Model.CidadesMaisFrias[0].Cidade)/@Html.DisplayFor(modelItem => Model.CidadesMaisFrias[0].EstadoUF)</p>
+                    <p class="a">@Html.DisplayFor(modelItem => Model.CidadesMaisFrias[1].Cidade)/@Html.DisplayFor(modelItem => Model.CidadesMaisFrias[1].EstadoUF)</p>
+                    <p class="a">@Html.DisplayFor(modelItem => Model.CidadesMaisFrias[2].Cidade)/@Html.DisplayFor(modelItem => Model.CidadesMaisFrias[2].EstadoUF)</p>
+                </div>
+                <div class="min-1">
+                    <p class="b">Min @Html.DisplayFor(modelItem => Model.CidadesMaisFrias[0].TemperaturaMinima)C</p>
+                    <p class="b">Min @Html.DisplayFor(modelItem => Model.CidadesMaisFrias[1].TemperaturaMinima)C</p>
+                    <p class="b">Min @Html.DisplayFor(modelItem => Model.CidadesMaisFrias[2].TemperaturaMinima)C</p>
+
+                </div>
+                <div class="max">
+                    <p class="c">Max @Html.DisplayFor(modelItem => Model.CidadesMaisFrias[0].TemperaturaMaxima)C</p>
+                    <p class="c">Max @Html.DisplayFor(modelItem => Model.CidadesMaisFrias[1].TemperaturaMaxima)C</p>
+                    <p class="c">Max @Html.DisplayFor(modelItem => Model.CidadesMaisFrias[2].TemperaturaMaxima)C</p>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="choise-city">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.Cidades, "Cidades", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownList("Cidades", null, "Selecione uma Cidade", htmlAttributes: new { @class = "form-control", @placeholder = "-Select-" })
+                @Html.ValidationMessageFor(model => model.Cidades, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <div>
+        <div id="listaprevisoes"></div>
+    </div>
+</body>
+</html>
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#Cidades').on('change', function (e) {
+                var data = $("#Cidades option:selected").val();
+                console.log(data);
+                $.ajax({
+                    url: "/PrevisaoClimas/GetCidadeClimas",
+                    type: 'GET',
+                    data: {
+                        cidadeId: data
+                    },
+                    success: function (response) {
+                        $('#listaprevisoes').html(response);
+                        $(".title-second").text("Clima para os próximos sete dias na cidade de " + $("#Cidades option:selected").text());
+                        console.log(response);
+                    },
+                })
+            });
+        });
+
+    </script>
+}
+
+

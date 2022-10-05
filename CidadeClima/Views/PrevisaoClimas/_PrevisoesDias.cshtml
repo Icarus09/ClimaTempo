@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CidadeClima.Models.CidadeClimaVM>
+
+<!--
+<div class="main-box">
+    <div class="box-title">
+        Your order has been submitted
+    </div>
+    <div class="box-content">
+        <p class="box-msg">Thank you for your order.</p>
+        <p>Transaction #:</p>
+        <p>Transaction Date:</p>
+        <p>Name:</p>
+    </div>
+</div>
+ -->
+
+
+<section class="title-second"> </section>
+
+<section class="container-menor">
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(0).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(0).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(0).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(0).TemperaturaMaxima)C</p>
+    </div>
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(1).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(1).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(1).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(1).TemperaturaMaxima)C</p>
+    </div>
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(2).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(2).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(2).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(2).TemperaturaMaxima)C</p>
+    </div>
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(3).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(3).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(3).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(3).TemperaturaMaxima)C</p>
+    </div>
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(4).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(4).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(4).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(4).TemperaturaMaxima)C</p>
+    </div>
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(5).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(5).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(5).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(5).TemperaturaMaxima)C</p>
+    </div>
+    <div class="cards">
+        <div class="title1">@Html.DisplayFor(modelItem => Model.ToList().ElementAt(6).DiaSemana)</div>
+        <p class="min"><i></i>@Html.DisplayFor(modelItem => Model.ToList().ElementAt(6).Clima)</p>
+        <p class="min">Minima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(6).TemperaturaMinima)C</p>
+        <p class="min">Maxima: @Html.DisplayFor(modelItem => Model.ToList().ElementAt(6).TemperaturaMaxima)C</p>
+    </div>
+</section>
+

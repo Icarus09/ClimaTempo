@@ -1,0 +1,132 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@300&family=Open+Sans:wght@300;400&family=Pompiere&family=Poppins:wght@100;200;400&family=Roboto:ital@0;1&display=swap');
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.title-main {
+    background-color: #EEEEEE;
+    height: 170px;
+}
+
+.clima {
+    font-size: 60px;
+    font-family: 'Roboto';
+    padding: 70px 50px;
+}
+
+.container_clima {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.sec1, .sec2 {
+    border-left: 2px #9FB9D0 solid;
+    border-right: 2px #9FB9D0 solid;
+    border-bottom: 2px #9FB9D0 solid;
+    border-top: none;
+    width: 600px;
+    height: 130px;
+    border-radius: 5px;
+}
+
+.title {
+    width: 598px;
+    height: 30px;
+    background-color: #347AB6;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.conteudos {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.title-city {
+    padding-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.choise-city {
+    margin-top: 20px;
+    float: right;
+    margin-right: 40px;
+}
+
+.title-second {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin-top: 70px;
+}
+
+.container-menor {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards {
+    width: 160px;
+    height: 130px;
+    border-left: 2px #9FB9D0 solid;
+    border-right: 2px #9FB9D0 solid;
+    border-bottom: 2px #9FB9D0 solid;
+    border-top: none;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.title1 {
+    width: 158px;
+    height: 30px;
+    background-color: #347AB6;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 4px;
+}
+
+.min {
+    text-align: center;
+    font-size: 15px;
+    padding-top: 4px;
+}
+
